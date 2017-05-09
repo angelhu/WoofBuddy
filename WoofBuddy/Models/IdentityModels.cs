@@ -32,5 +32,7 @@ namespace WoofBuddy.Models
 
         public System.Data.Entity.DbSet<WoofBuddy.Models.Profile> Profiles { get; set; }
 
+        public DbSet<FileDetail> FileDetails { get; set; }
+
     }
 }

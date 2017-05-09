@@ -9,6 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WoofBuddy.Models;
+using System.IO;
+using System.Collections.Generic;
 
 namespace WoofBuddy.Controllers
 {
@@ -172,6 +174,29 @@ namespace WoofBuddy.Controllers
                     newprofile.Birthday = model.Birthday;
                     newprofile.Breed = model.Breed;
                     newprofile.Bio = model.Bio;
+
+                    List<FileDetail> fileDetails = new List<FileDetail>();
+                    for (int i = 0; i < Request.Files.Count; i++)
+                    {
+                        var file = Request.Files[i];
+
+                        if (file != null && file.ContentLength > 0)
+                        {
+                            var fileName = Path.GetFileName(file.FileName);
+                            FileDetail fileDetail = new FileDetail()
+                            {
+                                FileName = fileName,
+                                Extension = Path.GetExtension(fileName),
+                                FileDetailID = Guid.NewGuid()
+                            };
+                            fileDetails.Add(fileDetail);
+
+                            var path = Path.Combine(Server.MapPath("~/Content/ProfilePics/"), fileDetail.FileDetailID + fileDetail.Extension);
+                            file.SaveAs(path);
+                        }
+                    }
+
+                    newprofile.FileDetails = fileDetails;
 
                     context.Profiles.Add(newprofile);
                     context.SaveChanges();

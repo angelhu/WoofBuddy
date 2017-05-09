@@ -26,5 +26,7 @@ namespace WoofBuddy.Models
 
         public string Bio { get; set; }
 
+        public virtual List<FileDetail> FileDetails { get; set; }
+
     }
 }

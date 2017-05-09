@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace WoofBuddy.Models
@@ -68,6 +69,25 @@ namespace WoofBuddy.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Gender")]
+        public virtual Gender DogGender { get; set; }
+
+        [Required]
+        [DisplayFormat(DataFormatString = "{0: MM/dd/yyyy}")]
+        [DataType(DataType.Date)]
+        public DateTime Birthday { get; set; }
+
+        [Required]
+        public string Breed { get; set; }
+
+        [Required]
+        public string Bio { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

@@ -29,5 +29,8 @@ namespace WoofBuddy.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<WoofBuddy.Models.Profile> Profiles { get; set; }
+
     }
 }

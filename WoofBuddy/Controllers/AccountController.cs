@@ -172,6 +172,7 @@ namespace WoofBuddy.Controllers
                     newprofile.FirstName = model.FirstName;
                     newprofile.DogGender = model.DogGender;
                     newprofile.Birthday = model.Birthday;
+                    newprofile.ZipCode = model.ZipCode;
                     newprofile.Breed = model.Breed;
                     newprofile.Bio = model.Bio;
 

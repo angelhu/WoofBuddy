@@ -22,6 +22,8 @@ namespace WoofBuddy.Models
         [DisplayFormat(DataFormatString = "{0: MM/dd/yyyy}")]
         public DateTime Birthday { get; set; }
 
+        public string ZipCode { get; set; }
+
         public string Breed { get; set; }
 
         public string Bio { get; set; }

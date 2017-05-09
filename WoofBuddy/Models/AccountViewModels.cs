@@ -84,6 +84,10 @@ namespace WoofBuddy.Models
         public DateTime Birthday { get; set; }
 
         [Required]
+        [Display(Name = "Zip Code")]
+        public string ZipCode { get; set; }
+
+        [Required]
         public string Breed { get; set; }
 
         [Required]

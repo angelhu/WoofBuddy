@@ -12,6 +12,8 @@ namespace WoofBuddy.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+        public Profile Profile { get; set; }
+        public FileDetail FileDetail { get; internal set; }
     }
 
     public class ManageLoginsViewModel

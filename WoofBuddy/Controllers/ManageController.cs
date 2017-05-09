@@ -13,6 +13,7 @@ namespace WoofBuddy.Controllers
     [Authorize]
     public class ManageController : Controller
     {
+        private ApplicationDbContext _context = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -70,7 +71,8 @@ namespace WoofBuddy.Controllers
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                Profile = _context.Profiles.Where(p => p.UserID == userId).FirstOrDefault(),
             };
             return View(model);
         }

@@ -93,6 +93,7 @@ namespace WoofBuddy.Models
         [Required]
         public string Bio { get; set; }
 
+        [Display(Name = "Profile Picture")]
         public virtual List<FileDetail> FileDetails { get; set; }
 
         [Required]

@@ -29,6 +29,13 @@
         <dt>@Html.DisplayNameFor(modelItem => Model.Profile.Bio):</dt>
         <dd>@Html.DisplayFor(modelItem => Model.Profile.Bio)</dd>
 
+        @if (Model.Profile.FileDetails != null && Model.Profile.FileDetails.Count > 0)
+        {
+            <dt>Profile Pic</dt>
+            <dd><img width="200" src="@Url.Content("~/Content/ProfilePics/" + Model.Profile.FileDetails[0].FileDetailID + Model.Profile.FileDetails[0].Extension)" ></dd>
+        }
+
+
         @*<dt>Password:</dt>
         <dd>
             [

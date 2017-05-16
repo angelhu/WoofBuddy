@@ -26,9 +26,9 @@
                 </ul>
                 @if (Context.User.Identity.IsAuthenticated) {
                 <div class="col-lg-3">
-                    <form id="searchForm" class="navbar-form">
+                    <form id="searchForm" class="navbar-form" method="get" action="/home/search">
                         <div class="input-group">
-                            <input type="text" id="searchInput" class="form-control" placeholder="Enter Zip Code" />
+                            <input type="text" id="searchInput" class="form-control" placeholder="Enter Zip Code" name="SearchedZipCode" value="@(Request.QueryString.Get("SearchedZipCode") ?? "")"/>
 
                             <div class="input-group-btn">
                                 <button class="btn btn-primary" id="searchButton" type="submit"><i class="glyphicon glyphicon-search"></i></button>

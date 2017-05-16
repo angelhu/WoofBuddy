@@ -24,6 +24,7 @@
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
+                @if (Context.User.Identity.IsAuthenticated) {
                 <div class="col-lg-3">
                     <form id="searchForm" class="navbar-form">
                         <div class="input-group">
@@ -35,6 +36,7 @@
                         </div>
                     </form>
                 </div>
+                }
                     @Html.Partial("_LoginPartial")
             </div>
             

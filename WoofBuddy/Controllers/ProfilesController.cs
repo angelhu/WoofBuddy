@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -14,6 +15,13 @@ namespace WoofBuddy.Controllers
     public class ProfilesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        public ActionResult Search(SearchViewModel search)
+        {
+            string userID = User.Identity.GetUserId();
+
+            return View("NearByDogs", db.Profiles.Where(p => p.ZipCode == search.SearchedZipCode && p.UserID != userID).FirstOrDefault());
+        }
 
         // GET: Profiles
         public ActionResult Index()

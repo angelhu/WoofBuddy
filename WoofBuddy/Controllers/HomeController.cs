@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,7 +10,7 @@ namespace WoofBuddy.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        
 
         public ActionResult Index()
         {
@@ -30,10 +31,7 @@ namespace WoofBuddy.Controllers
             return View();
         }
 
-        public ActionResult Search(SearchViewModel search)
-        {
-            return View("NearByDogs", db.Profiles.Where(p => p.ZipCode == search.SearchedZipCode || string.IsNullOrEmpty(search.SearchedZipCode)).ToList());
-        }
+        
 
         
     }

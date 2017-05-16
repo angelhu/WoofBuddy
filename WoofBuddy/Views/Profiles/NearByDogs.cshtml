@@ -1,0 +1,19 @@
+﻿@model WoofBuddy.Models.Profile
+@{
+    ViewBag.Title = "NearByDogs";
+}
+
+<div class="container">
+    <img width="350" src="@Url.Content("~/Content/ProfilePics/" + Model.FileDetails[0].FileDetailID + Model.FileDetails[0].Extension)"/>
+    <div>
+        <span>@Html.DisplayNameFor(modelItem => Model.FirstName): @Html.DisplayFor(modelItem => Model.FirstName)</span>
+        <span>@Html.DisplayNameFor(modelItem => Model.DogGender): @Html.DisplayFor(modelItem => Model.DogGender)</span>
+        <span>Age: @(DateTime.Now.Year - Model.Birthday.Year)</span>
+    </div>
+    <div>@Html.DisplayNameFor(modelItem => Model.Breed): @Html.DisplayFor(modelItem => Model.Breed)</div>
+    <div>@Html.DisplayNameFor(modelItem => Model.Bio): @Html.DisplayFor(modelItem => Model.Bio)</div>
+</div>
+<div>
+    <button>No</button>
+    <button>Yes</button>
+</div>

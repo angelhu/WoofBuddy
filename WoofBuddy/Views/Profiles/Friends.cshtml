@@ -1,0 +1,14 @@
+﻿@model List<WoofBuddy.Models.Profile>
+@{
+    ViewBag.Title = "Friends";
+}
+
+<h2>Friends</h2>
+
+@foreach (WoofBuddy.Models.Profile friend in Model)
+{
+    <div>
+        @friend.FirstName
+    </div>
+}
+

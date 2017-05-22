@@ -44,6 +44,20 @@ namespace WoofBuddy.Controllers
             return RedirectToAction("Search", new { SearchedZipCode = Request.Form["SearchedZipCode"] });
         }
 
+        public ActionResult Friends()
+        {
+            string userID = User.Identity.GetUserId();
+
+            List<Profile> friends = (from looker in db.ProfileLikes
+                                      join viewer in db.ProfileLikes on new { LookerUserID = looker.ViewedUserID, ViewedUserID = looker.LookerUserID } equals new { LookerUserID = viewer.LookerUserID, ViewedUserID = viewer.ViewedUserID }
+                                      join profiles in db.Profiles on viewer.LookerUserID equals profiles.UserID
+                                      where ((looker.LookerUserID == userID) && looker.Liked == true) && viewer.Liked == true
+                                      select profiles).ToList();
+
+            return View(friends.ToList());
+
+        }
+
         // GET: Profiles
         public ActionResult Index()
         {

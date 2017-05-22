@@ -3,6 +3,9 @@
     ViewBag.Title = "NearByDogs";
 }
 
+@if (Model != null && Model.ProfileID != 0)
+{
+
 <div class="container">
     <img width="350" src="@Url.Content("~/Content/ProfilePics/" + Model.FileDetails[0].FileDetailID + Model.FileDetails[0].Extension)"/>
     <div>
@@ -14,6 +17,16 @@
     <div>@Html.DisplayNameFor(modelItem => Model.Bio): @Html.DisplayFor(modelItem => Model.Bio)</div>
 </div>
 <div>
-    <button>No</button>
-    <button>Yes</button>
+    @using (Html.BeginForm("ProfileResponse", "Profiles", FormMethod.Post, new { }))
+    {
+    <input type="hidden" id="SearchedZipCode" name="SearchedZipCode" value="@(Request.QueryString.Get("SearchedZipCode") ?? "")" />
+    <input type="hidden" id="ViewedUserID" name="ViewedUserID" value="@Model.UserID" />
+    <button type="submit" id="Disliked" name="Liked" value="false">No</button>
+    <button type="submit" id="Liked" name="Liked" value="true">Yes</button>
+    }
 </div>
+} else {
+    <div>
+        No results found.
+    </div>
+}

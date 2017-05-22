@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201705091937345_Added zip code.Designer.cs">
       <DependentUpon>201705091937345_Added zip code.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705221548021_Created response class.cs" />
+    <Compile Include="Migrations\201705221548021_Created response class.Designer.cs">
+      <DependentUpon>201705221548021_Created response class.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FileDetail.cs" />
@@ -225,6 +229,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Profile.cs" />
+    <Compile Include="Models\ProfileLike.cs" />
     <Compile Include="Models\SearchViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -333,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705091937345_Added zip code.resx">
       <DependentUpon>201705091937345_Added zip code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221548021_Created response class.resx">
+      <DependentUpon>201705221548021_Created response class.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

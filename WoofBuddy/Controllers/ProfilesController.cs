@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -20,7 +21,27 @@ namespace WoofBuddy.Controllers
         {
             string userID = User.Identity.GetUserId();
 
-            return View("NearByDogs", db.Profiles.Where(p => p.ZipCode == search.SearchedZipCode && p.UserID != userID).FirstOrDefault());
+            var dislikes = from pl in db.ProfileLikes
+                           where pl.ViewedUserID == userID && pl.Liked == false
+                           select pl.LookerUserID;
+
+            var profiles = from p in db.Profiles
+                           join pl in db.ProfileLikes on new { ViewedUserID = p.UserID, LookerUserID = userID } equals new { ViewedUserID = pl.ViewedUserID, LookerUserID = pl.LookerUserID } into profilelikes
+                           from pl in profilelikes.DefaultIfEmpty()
+                           where pl.Liked == null && p.ZipCode == search.SearchedZipCode && p.UserID != userID && !dislikes.Contains(p.UserID)
+                           select p;
+
+            return View("NearByDogs", profiles.FirstOrDefault());
+        }   
+
+        [HttpPost]
+        public ActionResult ProfileResponse(ProfileLike like)
+        {
+            like.LookerUserID = User.Identity.GetUserId();
+            db.ProfileLikes.Add(like);
+            db.SaveChanges();
+
+            return RedirectToAction("Search", new { SearchedZipCode = Request.Form["SearchedZipCode"] });
         }
 
         // GET: Profiles

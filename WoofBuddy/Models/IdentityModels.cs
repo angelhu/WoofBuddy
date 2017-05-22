@@ -34,6 +34,8 @@ namespace WoofBuddy.Models
 
         public DbSet<FileDetail> FileDetails { get; set; }
 
+        public DbSet<ProfileLike> ProfileLikes { get; set; }
+
 
         
     }

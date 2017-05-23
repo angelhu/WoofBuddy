@@ -92,7 +92,7 @@ namespace WoofBuddy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProfileID,UserID,FirstName,DogGender,Birthday,Breed,Bio")] Profile profile)
+        public ActionResult Create([Bind(Include = "ProfileID,UserID,FirstName,DogGender,Birthday,Bio")] Profile profile)
         {
             if (ModelState.IsValid)
             {
@@ -126,7 +126,7 @@ namespace WoofBuddy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProfileID,UserID,FirstName,DogGender,Birthday,Breed,Bio")] Profile profile)
+        public ActionResult Edit([Bind(Include = "ProfileID,UserID,FirstName,DogGender,Birthday,Bio")] Profile profile)
         {
             if (ModelState.IsValid)
             {

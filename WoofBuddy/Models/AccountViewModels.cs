@@ -88,9 +88,6 @@ namespace WoofBuddy.Models
         public string ZipCode { get; set; }
 
         [Required]
-        public string Breed { get; set; }
-
-        [Required]
         public string Bio { get; set; }
 
         [Display(Name = "Profile Picture")]

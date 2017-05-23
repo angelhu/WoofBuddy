@@ -25,8 +25,6 @@ namespace WoofBuddy.Models
         [Display(Name = "Zip Code")]
         public string ZipCode { get; set; }
 
-        public string Breed { get; set; }
-
         public string Bio { get; set; }
 
         [Display(Name = "Profile Picture")]

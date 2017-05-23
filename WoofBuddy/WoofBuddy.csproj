@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201705221548021_Created response class.Designer.cs">
       <DependentUpon>201705221548021_Created response class.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705231615339_Deleted Breed property.cs" />
+    <Compile Include="Migrations\201705231615339_Deleted Breed property.Designer.cs">
+      <DependentUpon>201705231615339_Deleted Breed property.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FileDetail.cs" />
@@ -342,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705221548021_Created response class.resx">
       <DependentUpon>201705221548021_Created response class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231615339_Deleted Breed property.resx">
+      <DependentUpon>201705231615339_Deleted Breed property.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

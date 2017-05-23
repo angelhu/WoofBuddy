@@ -40,4 +40,40 @@ div #friend-name {
     padding-bottom: 5px;
 }
 
+/*Near by dogs page*/
+#near-by-dog-profile {
+    margin: 0 auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 320px;
+}
+
+#near-by-dog-profile-picture {
+    border-radius: 6%;
+    width: 350px;
+}
+
+#near-by-dog-name {
+    font-weight: bold;
+}
+
+#near-by-dog-info {
+    padding: 5% 2%;
+}
+
+#like-dislike-buttons {
+    clear: both;
+}
+
+#Disliked {
+    float: left;
+    margin-left: 20%;
+}
+
+#Liked {
+    float: right;
+    margin-right: 20%;
+}
+
+
 

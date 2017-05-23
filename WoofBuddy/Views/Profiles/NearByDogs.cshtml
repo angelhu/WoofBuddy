@@ -5,26 +5,34 @@
 
 @if (Model != null && Model.ProfileID != 0)
 {
+    <div id="near-by-dog">
+        <div id="near-by-dog-profile">
+            <div id="near-by-dog-picture-and-info">
+                <img id="near-by-dog-profile-picture" src="@Url.Content("~/Content/ProfilePics/" + Model.FileDetails[0].FileDetailID + Model.FileDetails[0].Extension)" />
+                <div id="near-by-dog-info">
+                    <span id="near-by-dog-name">@Html.DisplayFor(modelItem => Model.FirstName)</span>
+                    <div>
+                        <span>@Html.DisplayFor(modelItem => Model.DogGender), </span>
+                        <span>@(DateTime.Now.Year - Model.Birthday.Year)</span>
+                    </div>
 
-<div class="container">
-    <img width="350" src="@Url.Content("~/Content/ProfilePics/" + Model.FileDetails[0].FileDetailID + Model.FileDetails[0].Extension)"/>
-    <div>
-        <span>@Html.DisplayNameFor(modelItem => Model.FirstName): @Html.DisplayFor(modelItem => Model.FirstName)</span>
-        <span>@Html.DisplayNameFor(modelItem => Model.DogGender): @Html.DisplayFor(modelItem => Model.DogGender)</span>
-        <span>Age: @(DateTime.Now.Year - Model.Birthday.Year)</span>
+                    <div>@Html.DisplayFor(modelItem => Model.Bio)</div>
+                </div>
+            </div>
+            <div id="like-dislike-buttons">
+                @using (Html.BeginForm("ProfileResponse", "Profiles", FormMethod.Post, new { }))
+                {
+                    <input type="hidden" id="SearchedZipCode" name="SearchedZipCode" value="@(Request.QueryString.Get("SearchedZipCode") ?? "")" />
+                    <input type="hidden" id="ViewedUserID" name="ViewedUserID" value="@Model.UserID" />
+                    <button type="submit" id="Disliked" name="Liked" value="false"><i class="glyphicon glyphicon-thumbs-down"></i></button>
+                    <button type="submit" id="Liked" name="Liked" value="true"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+                }
+            </div>
+        </div>
     </div>
-    <div>@Html.DisplayNameFor(modelItem => Model.Bio): @Html.DisplayFor(modelItem => Model.Bio)</div>
-</div>
-<div>
-    @using (Html.BeginForm("ProfileResponse", "Profiles", FormMethod.Post, new { }))
-    {
-    <input type="hidden" id="SearchedZipCode" name="SearchedZipCode" value="@(Request.QueryString.Get("SearchedZipCode") ?? "")" />
-    <input type="hidden" id="ViewedUserID" name="ViewedUserID" value="@Model.UserID" />
-    <button type="submit" id="Disliked" name="Liked" value="false">No</button>
-    <button type="submit" id="Liked" name="Liked" value="true">Yes</button>
-    }
-</div>
-} else {
+}
+else
+{
     <div>
         No results found.
     </div>

@@ -25,7 +25,7 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @if (Context.User.Identity.IsAuthenticated) {
-                <div class="col-lg-3">
+                <div class="col-sm-3">
                     <form id="searchForm" class="navbar-form" method="get" action="/profiles/search">
                         <div class="input-group">
                             <input type="text" id="searchInput" class="form-control" placeholder="Enter Zip Code" name="SearchedZipCode" value="@(Request.QueryString.Get("SearchedZipCode") ?? "")"/>
@@ -44,10 +44,12 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

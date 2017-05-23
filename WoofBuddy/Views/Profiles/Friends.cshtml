@@ -7,8 +7,12 @@
 
 @foreach (WoofBuddy.Models.Profile friend in Model)
 {
-    <div>
-        @friend.FirstName
+    <div id="individual-friend">
+        <img id="friends-profile-picture" src="@Url.Content("~/Content/ProfilePics/" + friend.FileDetails[0].FileDetailID + friend.FileDetails[0].Extension)" />
+        <div id="friend-name">
+            @friend.FirstName
+        </div>
     </div>
+
 }
 

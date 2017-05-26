@@ -31,6 +31,7 @@ div #individual-friend {
 #friends-profile-picture {
     width: 200px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 div #friend-name {
@@ -75,5 +76,84 @@ div #friend-name {
     margin-right: 20%;
 }
 
+/*Navbar*/
+.navbar-inverse {
+    background-color: #8790B6;
+    border-color: #8790B6;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+}
+
+#zipCodeSearch {
+    border-radius: 21px;
+}
+
+#searchButton {
+    background: transparent;
+    border-color: transparent;
+    display: inline-block;
+    color: #66757f;
+}
+
+/*Chatbox*/
+#chatBox {
+    display: none;
+    position: fixed;
+    width: 240px;
+    height: 300px;
+    background: #FFF;
+    text-align: center;
+    bottom: 0px;
+    right: 15px;
+    cursor: pointer;
+    border-color: #DDD;
+    z-index: 1;
+    box-shadow: 0px 3px 2px rgba(0,0,0,0.1);
+    border-radius: 5px 5px 0 0;
+}
+
+#chat-box-bar {
+    border-radius: 5px 5px 0 0;
+    height: 24px;
+    width: 100%;
+    background-color: #8790B6;
+    color: #FFF;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1%;
+}
+
+#close {
+    position: absolute;
+    right: 2%;
+    top: 1%;
+}
+
+#chat-box-bottom-bar {
+    background-color: transparent;
+    border-top: 1px;
+    border-top-style: solid;
+    border-top-color: #DDD;
+    bottom: 0;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+}
+
+#message-content {
+    cursor: text;
+}
+
+#messageForm {
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+}
 
 

@@ -3,16 +3,61 @@
     ViewBag.Title = "Friends";
 }
 
+
 <h2>Friends</h2>
 
 @foreach (WoofBuddy.Models.Profile friend in Model)
 {
     <div id="individual-friend">
-        <img id="friends-profile-picture" src="@Url.Content("~/Content/ProfilePics/" + friend.FileDetails[0].FileDetailID + friend.FileDetails[0].Extension)" />
+        <img id="friends-profile-picture" src="@Url.Content("~/Content/ProfilePics/" + friend.FileDetails[0].FileDetailID + friend.FileDetails[0].Extension)" onclick="open_chatbox('@friend.FirstName', '@friend.UserID')"/>
         <div id="friend-name">
             @friend.FirstName
         </div>
     </div>
-
 }
+
+<div id="chatBox">
+    <div id="chat-box-bar">
+        <div id="chat-box-bar-friend-name"></div>
+        <div onclick="closeChat()" id="close">X</div>
+    </div>
+    
+    <div id="chat-box-message-content">
+
+    </div>
+
+    
+    <div id="chat-box-bottom-bar">
+        <form id="messageForm" method="get" action="">
+            <div class="input-group">
+                <input type="text" id="message-content" class="form-control"  />
+
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="message-content-send-button" type="submit">Send</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        function open_chatbox(firstName, userId) {
+            console.log(userId);
+            $('#chat-box-bar-friend-name').html(firstName);
+            $('#chatBox').fadeIn(100);
+        }
+
+        function closeChat() {
+            $('#chatBox').fadeOut(100);
+        }
+     </script>
+}
+
+
+
+
+
+
+
 

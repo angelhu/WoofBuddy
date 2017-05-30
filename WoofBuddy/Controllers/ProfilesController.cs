@@ -13,6 +13,8 @@ using WoofBuddy.Models;
 
 namespace WoofBuddy.Controllers
 {
+    [Authorize]
+
     public class ProfilesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

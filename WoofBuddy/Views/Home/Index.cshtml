@@ -2,29 +2,61 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@section HeroBackgroundImage {
+    <div id="hero-image">
+        <div id="hero-message">
+            <h1>Placeholder</h1>
+            <p>Placeholder</p>
+            <div id="join-us-one">
+                @Html.ActionLink("Sounds Pawsome", "Register", "Account", new { }, new {  })
+            </div>
+            <div id="join-us-two">
+                @Html.ActionLink("Already a Member", "Login", "Account", new { }, new {  })
+            </div>
+        </div>
+    </div>
+    }
 
+@section BackgroundImageTwo {
+   <div id="background-image-two">
+       <div id="message-two">
+           <h3>Placeholder</h3>
+           <h6>Placeholder</h6>
+       </div>
+       <img id="image-two" src="~/Content/BackgroundPics/2.jpg" alt="Pug" />
+    </div> 
+    }
 
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+@section BackgroundImageThree {
+    <div id="image-three">
+        <div id="message-three">
+            <h1>Placeholder</h1>
+            <p>Placeholder</p>
+            @Html.ActionLink("Find Me a Pawddy", "Register", "Account", new { }, new { @id = "join-us-three" })
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    }
+
+@section BackgroundImageFour {
+    <div id="good-looking-pups">
+        <div id="message-four">
+            <h1>Good-looking pups</h1>
+            <p>Placeholder</p>
+        </div>
+        <div class="good-looking-pup-row">
+            <div><img class="pup" src="~/Content/BackgroundPics/4.png" /></div>
+            <div><img class="pup" src="~/Content/BackgroundPics/5.png" /></div>
+            <div><img class="pup" src="~/Content/BackgroundPics/6.png" /></div>
+            <div><img class="pup" src="~/Content/BackgroundPics/7.png" /></div>
+        </div>
+
+        <div class="good-looking-pup-row">
+            <div><img class="pup" src="~/Content/BackgroundPics/8.png" /></div>
+            <div><img class="pup" src="~/Content/BackgroundPics/9.png" /></div>
+            <div><img class="pup" src="~/Content/BackgroundPics/10.png" /></div>
+            <div><img class="pup" src="~/Content/BackgroundPics/11.png" /></div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    }
+
+  

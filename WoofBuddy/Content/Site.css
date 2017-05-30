@@ -156,5 +156,118 @@ div #friend-name {
     padding-top: 3%;
 }
 
+/*Hero section*/
+#hero-image {
+    background-image: url('BackgroundPics/1.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    overflow: auto;
+    position: relative;
+}
 
+
+#hero-message {
+    float: left;
+    margin-left: 5%;
+    margin-top: 16%;
+    text-align: center;
+}
+
+#hero-message > h1 {
+    color: #FFF;
+}
+
+#hero-message > p {
+    color: #FFF;
+}
+
+#join-us-one {
+    background-color: #8790B6;
+    border-radius: 4px;
+    padding: 3% 5%;
+}
+
+#join-us-one > a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#join-us-two {
+    background-color: #FFF;
+    border-radius: 4px;
+    margin-top: 3%;
+    padding: 3% 5%;
+}
+
+#join-us-two > a {
+    color: #8790B6;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/*Hero-2 section*/
+#message-two {
+    text-align: center;
+}
+
+#image-two {
+    width: 70%;
+    margin: 30px auto 50px auto;
+    display: block;
+}
+
+/*Hero-3 section*/
+#image-three {
+    background-image: url('BackgroundPics/3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 820px;
+    overflow: auto;
+    position: relative;
+}
+
+#message-three {
+    float: right;
+    margin-top: 25%;
+    margin-right: 15%;
+    text-align: center;
+}
+
+#join-us-three {
+    background-color: #8790B6;
+    border-radius: 4px;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5% 8%;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/*Hero-4 section*/
+#good-looking-pups {
+    overflow: auto;
+    width: 80%;
+    margin: 20px auto;
+}
+
+#message-four {
+    text-align: center;
+}
+
+.pup-row {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.pup {
+    border-radius: 50%;
+    float: left;
+    margin: 2%;
+    width: 21%;
+}
 

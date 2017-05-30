@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MessageApiController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Controllers\SearchApiController.cs" />
     <Compile Include="Global.asax.cs">
@@ -225,6 +226,10 @@
     <Compile Include="Migrations\201705231615339_Deleted Breed property.cs" />
     <Compile Include="Migrations\201705231615339_Deleted Breed property.Designer.cs">
       <DependentUpon>201705231615339_Deleted Breed property.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705262153454_Message.cs" />
+    <Compile Include="Migrations\201705262153454_Message.Designer.cs">
+      <DependentUpon>201705262153454_Message.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -350,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705231615339_Deleted Breed property.resx">
       <DependentUpon>201705231615339_Deleted Breed property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705262153454_Message.resx">
+      <DependentUpon>201705262153454_Message.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

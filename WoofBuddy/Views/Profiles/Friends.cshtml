@@ -23,14 +23,15 @@
     </div>
     
     <div id="chat-box-message-content">
-
+       
     </div>
 
     
     <div id="chat-box-bottom-bar">
-        <form id="messageForm" method="get" action="">
+        <form id="messageForm" method="post" onsubmit="submitMessage(event)" action="@Url.RouteUrl("DefaultApi", new { httproute = "", controller = "MessageApi" })" >
             <div class="input-group">
-                <input type="text" id="message-content" class="form-control"  />
+                <input type="text" id="Body" name="Body" class="form-control"  />
+                <input type="hidden" id="ToUserID" name="ToUserID" />
 
                 <span class="input-group-btn">
                     <button class="btn btn-default" id="message-content-send-button" type="submit">Send</button>
@@ -44,12 +45,25 @@
     <script type="text/javascript">
         function open_chatbox(firstName, userId) {
             console.log(userId);
+            $('#ToUserID').val(userId);
             $('#chat-box-bar-friend-name').html(firstName);
             $('#chatBox').fadeIn(100);
         }
 
         function closeChat() {
             $('#chatBox').fadeOut(100);
+        }
+
+        function submitMessage(event) {
+            event.preventDefault;
+            var url = $('#messageForm').attr('action');
+            var body = $('#body').val();
+            var toUserID = $('#toUserID').val();
+            var newMessage = { Body: body, ToUserID: toUserID };
+
+            $.post(url, newMessage).done(function (result) {
+                console.log(message);
+            })
         }
      </script>
 }

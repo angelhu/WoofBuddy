@@ -36,7 +36,7 @@ namespace WoofBuddy.Models
 
         public DbSet<ProfileLike> ProfileLikes { get; set; }
 
-
+        public DbSet<Message> Messages { get; set; }
         
     }
 }

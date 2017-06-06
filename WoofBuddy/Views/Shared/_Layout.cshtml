@@ -20,27 +20,31 @@
                 </button>
                 @Html.ActionLink("WoofBuddy", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+           
             <div class="navbar-collapse collapse">
+                
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     @if (Context.User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Friends", "Friends", "Profiles")</li>
+                        <li>
+                            <div class="col-sm-3" id="searchBar">
+                                <form id="searchForm" class="navbar-form" method="get" action="/profiles/search">
+                                    <div class="input-group">
+                                        <input type="text" id="searchInput" class="form-control" placeholder="Enter Zip Code" name="SearchedZipCode" value="@(Request.QueryString.Get("SearchedZipCode") ?? "")" />
+
+
+                                        <button class="btn btn-primary" id="searchButton" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
                     }
                 </ul>
-                @if (Context.User.Identity.IsAuthenticated) {
-                <div class="col-sm-3">
-                    <form id="searchForm" class="navbar-form" method="get" action="/profiles/search">
-                        <div class="input-group">
-                            <input type="text" id="searchInput" class="form-control" placeholder="Enter Zip Code" name="SearchedZipCode" value="@(Request.QueryString.Get("SearchedZipCode") ?? "")" />
-                            
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary" id="searchButton" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-                }
+                
+               
                     @Html.Partial("_LoginPartial")
             </div>
             

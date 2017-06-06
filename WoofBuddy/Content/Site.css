@@ -24,6 +24,12 @@ textarea {
 }
 
 /*Friends page*/
+#friends-title {
+    font-family: 'Burbank Small Bold', sans-serif;
+    margin-top: 5%;
+    text-align: center;
+}
+
 div #individual-friend {
     display: inline-block;
     padding: 5px 40px 5px 40px;
@@ -34,9 +40,10 @@ div #individual-friend {
     cursor: pointer;
 }
 
-div #friend-name {
+div #friends-name {
+    font-family: 'Apercu-Bold', sans-serif;
+    font-size: 16px;
     text-align: center;
-    font-weight: bold;
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -55,10 +62,11 @@ div #friend-name {
 }
 
 #near-by-dog-name {
-    font-weight: bold;
+    font-family: 'Burbank Small Bold', sans-serif;
 }
 
 #near-by-dog-info {
+    font-family: 'Apercu-Regular', sans-serif;
     padding: 5% 2%;
 }
 
@@ -67,31 +75,67 @@ div #friend-name {
 }
 
 #Disliked {
+    border-radius: 50%;
     float: left;
     margin-left: 20%;
 }
 
 #Liked {
+    border-radius: 50%;
     float: right;
     margin-right: 20%;
 }
 
 /*Navbar*/
 .navbar-inverse {
-    background-color: #8790B6;
-    border-color: #8790B6;
+    background-color: #FFF;
+    border-color: #DDD;
+    height: 75px;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: #FFFFFF;
+.navbar-brand{
+    position: absolute;
+    left: 45%;
 }
 
 .navbar-inverse .navbar-brand {
-    color: #FFFFFF;
+    color: #8790B6;
+    font-family: 'Burbank Small Bold', sans-serif;
+    font-size: 34px;
+    line-height: 45px;
+}
+
+.navbar-inverse .navbar-brand:hover{
+    color: #8790B6;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #000;
+    font-family: 'Apercu-Bold', sans-serif;
+    font-size: 14px;
+    line-height: 45px;
+    text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #8790B6;
 }
 
 #zipCodeSearch {
     border-radius: 21px;
+}
+
+#searchBar {
+    margin-left: -10px;
+    margin-top: 6%;
+}
+
+#searchInput {
+    background-color: #f5f8fa;
+    border-radius: 21px;
+    font-family: 'Apercu-Regular', sans-serif;
+    font-size: 13px;
+    width: 150px;
 }
 
 #searchButton {
@@ -99,6 +143,8 @@ div #friend-name {
     border-color: transparent;
     display: inline-block;
     color: #66757f;
+    font-size: 12px;
+    margin-left: -40px;
 }
 
 /*Chatbox*/
@@ -108,7 +154,6 @@ div #friend-name {
     width: 240px;
     height: 300px;
     background: #FFF;
-    text-align: center;
     bottom: 0px;
     right: 15px;
     cursor: pointer;
@@ -129,10 +174,49 @@ div #friend-name {
     padding-top: 1%;
 }
 
+#chat-box-bar-friend-name {
+    font-family: 'Apercu-Bold', sans-serif;
+    font-size: 15px;
+}
+
 #close {
     position: absolute;
     right: 2%;
     top: 1%;
+}
+
+#chat-box-message-content {
+    height: 226px;
+    overflow-y: scroll;
+    padding: 3%;
+    width: 240px;
+}
+
+.message-content-to {
+    cursor: text;
+    float: left;
+    font-family: 'Apercu-Regular', sans-serif;
+    font-size: 14px;
+    line-height: 1.2em;
+    width: 80%;
+    text-align: left;
+}
+.from-time {
+    font-size: 10px;
+}
+
+.message-content-from {
+    cursor: text;
+    float: right;
+    font-family: 'Apercu-Regular', sans-serif;
+    font-size: 14px;
+    line-height: 1.2em;
+    width: 80%;
+    text-align: right;
+}
+
+.to-time {
+    font-size: 10px;
 }
 
 #chat-box-bottom-bar {
@@ -144,6 +228,10 @@ div #friend-name {
     height: 50px;
     position: absolute;
     width: 100%;
+}
+
+#message-content-send-button {
+    font-family: 'Apercu-Regular', sans-serif;
 }
 
 #message-content {
@@ -177,21 +265,27 @@ div #friend-name {
 
 #hero-message > h1 {
     color: #FFF;
+    font-family: 'Burbank Small Bold', sans-serif;
+    font-size: 36px;
 }
 
 #hero-message > p {
     color: #FFF;
+    font-family: 'Apercu-Regular', sans-serif;
+    font-size: 17px;
 }
 
 #join-us-one {
     background-color: #8790B6;
     border-radius: 4px;
-    padding: 3% 5%;
+    margin-top: 5%;
+    padding: 5% 5%;
 }
 
 #join-us-one > a {
     color: #FFF;
-    font-weight: bold;
+    font-family: 'Apercu-Bold', sans-serif;
+    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -199,13 +293,14 @@ div #friend-name {
 #join-us-two {
     background-color: #FFF;
     border-radius: 4px;
-    margin-top: 3%;
-    padding: 3% 5%;
+    margin-top: 5%;
+    padding: 5% 5%;
 }
 
 #join-us-two > a {
     color: #8790B6;
-    font-weight: bold;
+    font-family: 'Apercu-Bold', sans-serif;
+    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -213,6 +308,16 @@ div #friend-name {
 /*Hero-2 section*/
 #message-two {
     text-align: center;
+}
+
+#message-two > h1 {
+    font-family: 'Burbank Small Bold', sans-serif;
+    font-size: 36px;
+}
+
+#message-two > p {
+    font-family: 'Apercu-Regular', sans-serif;
+    font-size: 17px;
 }
 
 #image-two {
@@ -238,12 +343,27 @@ div #friend-name {
     text-align: center;
 }
 
+#message-three > h1 {
+    font-family: 'Burbank Small Bold', sans-serif;
+    font-size: 36px;
+}
+
+#message-three > p {
+    font-family: 'Apercu-Regular', sans-serif;
+    font-size: 17px;
+}
+
 #join-us-three {
     background-color: #8790B6;
     border-radius: 4px;
+    margin-top: 5%;;
+    padding: 5% 5%;
+}
+
+#join-us-three > a {
     color: #FFF;
-    font-weight: bold;
-    padding: 5% 8%;
+    font-family: 'Apercu-Bold', sans-serif;
+    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -259,6 +379,16 @@ div #friend-name {
     text-align: center;
 }
 
+#message-four > h1 {
+    font-family: 'Burbank Small Bold', sans-serif;
+    font-size: 36px;
+}
+
+#message-four > p {
+    font-family: 'Apercu-Regular', sans-serif;
+    font-size: 17px;
+}
+
 .pup-row {
     width: 100%;
     margin: 0 auto;
@@ -269,5 +399,22 @@ div #friend-name {
     float: left;
     margin: 2%;
     width: 21%;
+}
+
+
+/*Fonts*/
+@font-face {
+    font-family: 'Burbank Small Bold';
+    src: url('Fonts/Burbank Small Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Apercu-Bold';
+    src: url('Fonts/Apercu-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Apercu-Regular';
+    src: url('Fonts/Apercu-Regular.ttf') format('truetype');
 }
 

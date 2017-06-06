@@ -1,16 +1,19 @@
 ﻿@model List<WoofBuddy.Models.Profile>
+@using Microsoft.AspNet.Identity;
+
 @{
+
     ViewBag.Title = "Friends";
 }
 
 
-<h2>Friends</h2>
+<h2 id="friends-title">Friends</h2>
 
 @foreach (WoofBuddy.Models.Profile friend in Model)
 {
     <div id="individual-friend">
         <img id="friends-profile-picture" src="@Url.Content("~/Content/ProfilePics/" + friend.FileDetails[0].FileDetailID + friend.FileDetails[0].Extension)" onclick="open_chatbox('@friend.FirstName', '@friend.UserID')"/>
-        <div id="friend-name">
+        <div id="friends-name">
             @friend.FirstName
         </div>
     </div>
@@ -23,7 +26,7 @@
     </div>
     
     <div id="chat-box-message-content">
-       
+
     </div>
 
     
@@ -43,11 +46,21 @@
 
 @section Scripts {
     <script type="text/javascript">
+        var interval;
+
         function open_chatbox(firstName, userId) {
             console.log(userId);
             $('#ToUserID').val(userId);
             $('#chat-box-bar-friend-name').html(firstName);
             $('#chatBox').fadeIn(100);
+
+            if (interval) {
+                clearInterval(interval);
+            }
+            displayMessages(userId);
+            interval = setInterval(function () {
+                displayMessages(userId);
+            }, 1000);
         }
 
         function closeChat() {
@@ -55,15 +68,39 @@
         }
 
         function submitMessage(event) {
-            event.preventDefault;
+            event.preventDefault();
             var url = $('#messageForm').attr('action');
-            var body = $('#body').val();
-            var toUserID = $('#toUserID').val();
+            var body = $('#Body').val();
+            var toUserID = $('#ToUserID').val();
             var newMessage = { Body: body, ToUserID: toUserID };
 
             $.post(url, newMessage).done(function (result) {
-                console.log(message);
+                console.log(result);
+                $('#Body').val('');
+
+                $('.message-content-to').append('<div>' + body + '</div>');
+                $('#chat-box-message-content').stop().animate({ scrollTop: $('#chat-box-message-content')[0].scrollHeight }, 100);
             })
+        }
+
+        function displayMessages(ToUser) {
+            $.get('/api/messageapi?id=' + ToUser).done(function (messages) {
+                console.log(messages);
+
+                $('#chat-box-message-content').empty();
+                messages.forEach(function (message) {
+                    //console.log(message);
+                    var messageBody = message.Body;
+                    var className = 'message-content-to';
+
+                    if ('@User.Identity.GetUserId()' === message.FromUserID) {
+                        console.log("I am in the if statement");
+                        className = 'message-content-from';
+                    }
+                    $('#chat-box-message-content').append('<div ' + 'class="' + className + '">' + messageBody + '</div>');
+                });
+                $('#chat-box-message-content').stop().animate({ scrollTop: $('#chat-box-message-content')[0].scrollHeight }, 100);
+            });
         }
      </script>
 }

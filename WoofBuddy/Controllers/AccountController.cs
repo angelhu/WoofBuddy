@@ -201,7 +201,7 @@ namespace WoofBuddy.Controllers
                     context.Profiles.Add(newprofile);
                     context.SaveChanges();
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Friends", "Profiles");
                 }
                 AddErrors(result);
             }

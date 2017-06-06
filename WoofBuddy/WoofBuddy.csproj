@@ -270,6 +270,9 @@
     </Content>
     <Content Include="App_Readme\Handlebarsjs_README.md" />
     <Content Include="App_Readme\Handlebarsjs_LICENSE" />
+    <Content Include="Content\Fonts\Burbank Small Bold.otf" />
+    <Content Include="Content\Fonts\Apercu-Bold.otf" />
+    <Content Include="Content\Fonts\Apercu-Regular.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\handlebars.amd.js" />
     <Content Include="Scripts\handlebars.amd.min.js" />

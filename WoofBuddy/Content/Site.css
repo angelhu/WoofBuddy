@@ -48,6 +48,17 @@ div #friends-name {
     padding-bottom: 5px;
 }
 
+/*About page*/
+#about-title {
+    font-family: 'Burbank Small Bold', sans-serif;
+    margin-top: 5%;
+    text-align: center;
+}
+
+#about-message {
+    font-family: 'Apercu-Regular', sans-serif;
+}
+
 /*Near by dogs page*/
 #near-by-dog-profile {
     margin: 0 auto;
@@ -259,7 +270,7 @@ div #friends-name {
 #hero-message {
     float: left;
     margin-left: 5%;
-    margin-top: 16%;
+    margin-top: 18%;
     text-align: center;
 }
 
@@ -280,6 +291,7 @@ div #friends-name {
     border-radius: 4px;
     margin-top: 5%;
     padding: 5% 5%;
+    
 }
 
 #join-us-one > a {
@@ -307,6 +319,7 @@ div #friends-name {
 
 /*Hero-2 section*/
 #message-two {
+    margin-top: 3%;
     text-align: center;
 }
 
@@ -401,6 +414,20 @@ div #friends-name {
     width: 21%;
 }
 
+/*Login page*/
+#login-page {
+    margin-top: 5%;
+}
+
+/*Register page*/
+#register-page {
+    margin-top: 5%;
+}
+
+/*Profile page*/
+#profile-page {
+    margin-top: 5%;
+}
 
 /*Fonts*/
 @font-face {

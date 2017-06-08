@@ -2,12 +2,12 @@
 @{
     ViewBag.Title = "Manage";
 }
-
-<h2>@ViewBag.Title.</h2>
+@*@ViewBag.Title.*@
+<h2 id="profile-page">Profile</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4>Change your account settings</h4>
+    @*<h4>Change your account settings</h4>*@
     <hr />
     <dl class="dl-horizontal">
 
@@ -28,7 +28,7 @@
 
         @if (Model.Profile.FileDetails != null && Model.Profile.FileDetails.Count > 0)
         {
-            <dt>Profile Pic</dt>
+            <dt>Profile Pic:</dt>
             <dd><img width="200" src="@Url.Content("~/Content/ProfilePics/" + Model.Profile.FileDetails[0].FileDetailID + Model.Profile.FileDetails[0].Extension)" ></dd>
         }
 
